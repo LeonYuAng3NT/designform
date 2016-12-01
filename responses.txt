@@ -1,0 +1,182 @@
+
+GET /artists
+
+Response is an array of artists with the following fields
+{
+    "artists": [
+        {
+            "id": "",
+            "pwd": "",
+            "givenname": "",
+            "lastname": "",
+            "gender": ""
+            "college": "",
+            "country": ""
+            "address": ""
+            "status": "",
+            "role": ""
+
+        }
+    ]
+}
+
+GET /artists?country=country
+
+Response has the same structure as the previous request.
+
+{
+    "artists": [
+         {
+                    "id": "",
+                    "pwd": "",
+                    "givenname": "",
+                    "lastname": "",
+                    "gender": "",
+                    "college": "",
+                    "country": "",
+                    "address": "",
+                    "status": "",
+                    "role": ""
+
+          }
+    ]
+}
+
+GET /artists?lname=lname
+
+{
+        "id": "",
+         "pwd": "",
+        "givenname": "",
+        "lastname": "",
+        "gender": "",
+        "college": "",
+        "country": "",
+        "address": "",
+        "status": "",
+        "role": ""
+}
+
+POST /artists/:id/product
+Request body contains
+
+{
+   "id": "",
+   "password":"",
+   "givenname": "",
+   "lastname": "",
+   "gender": "",
+   "college": "",
+   "country": "",
+   "address": "",
+    "status": "",
+    "role": ""
+    "products": [
+        {
+            "name": "",
+            "description": "",
+            "releaseTime":"",
+            "on-sale": ""
+        },
+        {
+           "name": "",
+           "description": "",
+            "releaseTime":"",
+           "on-sale": ""
+        }
+    ]
+}
+Response is "Success" or "Error: duplicate product"
+
+
+DELETE /artist/products?name=name
+
+
+Response is "Success" or "Error: no such student"
+
+GET /artists:id/products
+Response
+{
+    "products" : [
+        {
+            "name" : "",
+            "releaseTime":"",
+            "artist" : [
+                {
+                   "id": "",
+                   "password":"",
+                    "givenname": "",
+                    "lastname": "",
+                    "gender": "",
+                    "college": "",
+                    "country": "",
+                    "address": "",
+                     "status": "",
+                     "role": ""
+                }
+            ]
+        }
+    ]
+}
+
+GET /products?name=name
+
+Response
+{
+    "name" : "",
+     "releaseTime":"",
+               "artist" : [
+                   {
+                      "id": "",
+                      "password":"",
+                       "givenname": "",
+                       "lastname": "",
+                       "gender": "",
+                       "college": "",
+                       "country": "",
+                       "address": "",
+                        "status": "",
+                        "role": ""
+                   }
+               ]
+}
+
+GET /artists/products?rtime=rtime
+
+Response
+{
+    "name" : "",
+     "releaseTime":"",
+               "artist" : [
+                   {
+                      "id": "",
+                      "password":"",
+                       "givenname": "",
+                       "lastname": "",
+                       "gender": "",
+                       "college": "",
+                       "country": "",
+                       "address": "",
+                        "status": "",
+                        "role": ""
+                   }
+               ]
+}
+
+POST /artist
+
+Request contains
+{
+        "id": "",
+        "pwd":"",
+        "givenname": "",
+        "lastname": "",
+        "gender": "",
+        "college": "",
+        "country": "",
+        "address": "",
+        "status": "",
+        "role": ""
+}
+
+Response:

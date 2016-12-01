@@ -1,0 +1,13 @@
+Probably too ambitious, but you can cut it back into something more manageable without too much difficulty.
+
+First off, I would cut out the raising money for their design part of this until you get everything thing else up and running. That is a complicated beast on it's own, and is almost certainly too ambitious.
+
+Spend some time thinking through what the requests and back-end look like for a bunch of these things. I noticed you had a responses file outlining some of it, but there is still a ton more. For example, what does it look like for comments on some art? What does posting a comment look like? How does the request for rating work? If you want to search by college, but a user has set their college info to be private, should they show up? What sort of UI do you want to provide for a project blog? How can users add stuff to it? How does the rating for other group members work? Are projects an individual thing (just one user) or belong to many people? It seems like in some places you have it that a user has their own set of projects, but later you mention group members for it. If an artist deletes a project, does that delete it for others as well? Can you remove yourself from a project?
+
+For some of the responses you do have, you might want to think a bit about the structure of the url and the routes a bit more. For example, consider something like GET /artist/:id for getting the page of a particular artist. Also, you are going to need POSTs for making them in the first place.
+
+Also, for how you plan on storing data and getting it into the application, we were looking for a bit more info than just which things you were going to use. Make sure you think through the details on this, it could get messy if you aren't careful.
+
+These are all questions you all are going to need to consider in order to figure out the scope of your project better, which should make things a lot easier.
+
+Mark: 6/10

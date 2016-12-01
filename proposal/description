@@ -1,0 +1,48 @@
+
+Topics:
+
+Our application specifically focuses on helping Designers and artist to demonstrate or even sale their works their products.It serves all designers,artists from all over the world and everyone can specify their roles in details. At a high level, users are able to first sign up as a user by submitting a application form and their profile pictures as well. Every user has a cart of their works and able to see others work after signed in.
+
+Here is a list of the user interactions with the application
+
+-A user is able to sign up or login 
+
+-A user can post or delete their product in their own carts and then the main interface will automatically delete this product.
+
+- Every single user can read the description of product(view as a blog)  and click into the blog for details. Users are able to comment on the work, they can like the work and even raise dollars to the design
+
+-Users can rate other artists. When a project is finished, group members can rate each other and leave comments. Initiators can check applicants' rating level and read their partner comments history.
+
+- Users in the same group are automatically considered as friends. They can check each other's information such as experience
+
+-The main menu allows user to search for specific work. They can search by product\u2019s name,by release time, by country, by college,by reputation and by artist\u2019s name
+
+-The left bar menu specifies the category of products. Uses are able to click on it so the main view will be refreshed.
+
+- Each user has a profile including privacy informations:id,first name, last name, gender, college,status,country, skills, experience, contact number and Design products.
+
+-We will user database MongoDB to store data and use mongoose to get data into our application
+
+
+
+
+ what does it look like for comments on some art?  If the user clicks on more info and then you can see the comments
+                                                    under the description of a product.
+ What does posting a comment look like? How does the request for rating work?
+ If you want to search by college, but a user has set their college info to be private, should they show up?  We didn't mention that any user can set their college into private
+ What sort of UI do you want to provide for a project blog?  Bootstrap / Semantic UI
+ How can users add stuff to it?
+ How does the rating for other group members work? the rating ranges from 0-5; we an only rate a product not member
+
+ Are projects an individual thing (just one user) or belong to many people?
+ It seems like in some places you have it that a user has their own set of projects, but later you mention group members for it.
+ If an artist deletes a project, does that delete it for others as well?
+ Can you remove yourself from a project?
+
+For some of the responses you do have, you might want to think a bit about the structure of the url and the routes a bit more. For example, consider something like GET /artist/:id for getting the page of a particular artist. Also, you are going to need POSTs for making them in the first place.
+
+Also, for how you plan on storing data and getting it into the application, we were looking for a bit more info than just which things you were going to use. Make sure you think through the details on this, it could get messy if you aren't careful.
+
+These are all questions you all are going to need to consider in order to figure out the scope of your project better, which should make things a lot easier.
+
+Mark: 6/10

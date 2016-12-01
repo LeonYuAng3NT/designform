@@ -1,0 +1,51 @@
+{
+  "name": "group11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonYuAng3NT/group11.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Yu Ang Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LeonYuAng3NT/group11/issues"
+  },
+  "homepage": "https://github.com/LeonYuAng3NT/group11#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.2",
+    "ejs": "^2.5.3",
+    "express": "^4.14.0",
+    "express-validator": "^2.21.0",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.7",
+    "mongoose-findorcreate": "^0.1.2",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "shortid": "^2.2.6"
+  },
+  "engines": {
+  "node": "4.1.1"
+  }
+}

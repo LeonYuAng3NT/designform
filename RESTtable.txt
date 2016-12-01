@@ -1,0 +1,61 @@
+
+
+TYPE    |       URL                                 |            View details /  Description            |   C/I( complete or imcomplete)
+=======================================================================================================================================
+GET     |    /artists                               |      Show all artists all the page                |    C
+GET     |   /artists?country=country                |      Show all artists from one country            |    C
+GET     |    /artists?lname=lname                   |      Show all particular artist by searching
+                                                               its last name                            |    C
+GET     |    /main                                  |      Main Page / Send products from all
+                                                            artists after login                         |    C
+GET     |    /main?name=name                        |       Main Page / Show products
+                                                            with specific name
+                                                                                                        |    C
+GET     |    /main?rtime=rtime                      |       Main Page / Show products
+                                                            with release time
+                                                                                                        |    C
+POST    |    /artist                                |      Sign up page view / fill-in form
+                                                            and add Artist                              |    C
+
+GET     |    /artists/:id                           |      Personal Page/   Show all data from
+                                                            selected Artist                             |    C
+GET     |   /artists/:id/product?name=name/reviews  |      Personal page / All review of one product
+                                                                                                        |    C
+POST    |    /artists/:id/product                   |      Display add Product form/ Add one product
+                                                                                                        |    C
+POST    |    /artists/:id/product:name/review       |      Dsiplay add reivew  form/ Add one review
+                                                                                                        |    C
+PUT     |    /artists/:id/products:name
+                /review:reviewid                    |      click modify button on your review/ Allow
+                                                            user to modify  and update one
+                                                            artist's review                             |    I
+PUT     |    /artists/:id                           |      click modify button on your profile/ Allow
+                                                            admin to modify  and update one's profile
+                                                                                                        |    C
+
+
+GET     |    /login                                 |      Login in page before everything              |    C
+GET     |    /register                              |       Register if not a sign-up user              |    C
+
+DELETE  |    /artists/:id/product?name=name         |      Click on delete button/ Delete  a product    |    C
+DELETE  |   /artists/:id/product:name/review?
+              reviewid=reviewid                     |       Click on delete button/ Delete  a review    |    C
+
+
+
+
+Note : haven't decided about facebook login and didn't add routes to the above table
+
+登录 ->  注册
+     ->  主页 (显示所有作品)
+                           ->  搜索作品名字
+                           ->  搜索作品时间
+         (点击一个作品)      ->  作品详情  (显示细节和所有感想)
+                                             (点击一个按钮)    ->  填写感想
+                                              (点击一个按钮)   ->  更改自己的感想
+                                                (点击一个按钮) ->  删除感想
+        (右上角的按钮)       ->  登录用户的个人主页(显示所有登录用户的所有作品)   ->  (点击一个按钮,进入一个填写的form)添加作品
+        (界面一栏的一个按钮)  ->  所有艺术家 (显示所有艺术家)
+                                                       -> 搜索后姓
+                                                       -> 搜索国家
+                                       (点击一位之后)    -> 个人信息(显示所有个人product)
