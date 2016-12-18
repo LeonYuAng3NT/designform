@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Website CSS style -->
+        <link rel="stylesheet" type="text/css" href="../css/register_style.css">
+
+        <!-- Website Font style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+        <title>Create Your DesignForm Account</title>
+    </head>
+
+
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/">DesignForm</a>
+              </div>
+          </div>
+      </nav>
+
+    <div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+                 <div class="panel-title text-center">
+                    <h1 class="title">Enter Your Comment :D</h1>
+                    <hr />
+                  </div>
+              </div>
+        <div class="main-login main-center">
+          <form id="reviewform" class="form-horizontal" method="post" action="#">
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Author</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="reviewerName" id="reviewerName"  placeholder="Enter Your Name"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Rating</label>
+              <div class="cols-sm-10">
+                <div class="cols-sm-10">
+                  <select class="form-control" id="reviewRating" name="reviewRating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Your Comments</label>
+              <div class="cols-sm-10">
+                <div class="form-group">
+                  <textarea class="form-control" rows="7" name="comment" id="comment" placeholder="Enter Your Comment"></textarea>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-group ">
+              <!-- <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button> -->
+              <input class="btn btn-primary btn-lg btn-block login-button" type="submit" value="Submit">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

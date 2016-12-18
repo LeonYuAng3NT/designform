@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="../css/user_style.css">
 
         <!-- Website js-->
-        <script src="../script/user.js"></script>
+        <script src="../script/edit.js"></script>
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -39,8 +39,8 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
                             <% var home_url= "user_home?username=" + person.username %>
-                            <li><a class="home_ref" href=<%=home_url%> id="user_ref"><%=person.username%></a></li>
-                            <li><a href="main">Log out</a></li>
+                            <li><a id="user_ref" href=<%=home_url%>><%=person.username%></a></li>
+                            <li><a href="/login">Log out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <ul>
                 <% var user_search_url = "user_search?user=" + person.username %>
                 <% var explore_url = "explore?username=" + person.username %>
-                    <li><a href="/main">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href=<%= explore_url%>>Explore</a></li>
                     <li><a href=<%= user_search_url %>>Users</a></li>
                     <li><a href="/">Sign Out</a></li>
@@ -94,58 +94,80 @@
                             <!-- the user's menu-->
                             <% var gallery_url= "gallery?username=" + person.username %>
                             <% var profile_url= "profile?username=" + person.username %>
-                            <% var add_url= "addproduct?username=" + person.username %>
                             <% console.log(gallery_url)%>
                             <div class="collapse navbar-collapse">
                                 <a id="go_home_btn" href=<%=home_url%> style="font-size: 40px; color:lightblue">Home</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp
                                 <a href=<%=profile_url%> style="font-size: 40px; color:lightblue" id="get_profile_btn">Profile</a>&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp
                                 <a href=<%=gallery_url%> style="font-size: 40px; color:lightblue">Gallery</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <a id="addproduct_btn" style="font-size: 40px; color:lightblue" href=<%=add_url%>>Add product</a> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
+                                <a id="addproduct_btn" style="font-size: 40px; color:lightblue" href="addproduct">Add product</a> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
                             </div>
                         </div>
                     </nav>
 
                     <!-- the part that may change with the user's choice in this case is the profile-->
                     <div id="changing_part">
-
                         <!-- The profile content-->
                         <div class="container">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
                                     <div class="panel panel-info">
                                         <div class="panel-heading">
-                                        <h3 class="panel-title" id="user_name"><%= person.givenname %>&nbsp<%= person.lastname %></h3>
+                                            <input type="text" class="panel-title" id="edit_givenname" value=<%= person.givenname %>></input>
+                                            <input type="text" class="panel-title" id="edit_lastname" value=<%= person.lastname %>></input>
                                         </div>
                                         <div class="panel-body">
                                             <div class="row">
                                              <% if(!person.picture){%>
-                                                <div class="col-md-3 col-lg-3 " align="center"> <img  src="./img/face.jpg" class="img-circle img-responsive"> </div>
+                                                <div class="col-md-3 col-lg-3 " align="center"> 
+                                                    <img id="user_photo" src="./img/face.jpg" class="img-circle img-responsive">
+                                                    <i id="new_photo" class="glyphicon glyphicon-camera" style="font-size:25px"></i>
+                                                </div>
                                             <% }%>
-                                                 <div class="col-md-3 col-lg-3 " align="center"> <img  src="<%= person.picture %>" class="img-circle img-responsive"> </div>
+                                                <div class="col-md-3 col-lg-3 " align="center"> 
+                                                    <img id="user_photo" src="<%= person.picture %>" class="img-circle img-responsive"> <br />
+                                                    <i class="glyphicon glyphicon-camera" style="font-size:25px" id="new_photo"></i>
+                                                </div>
                                                 <div class=" col-md-9 col-lg-9 "> 
                                                     <table class="table table-user-information">
                                                         <tbody>
                                                           
                                                             <tr>
 
-                                                                <td>Status:</td>
+                                                                <td>Status</td>
 
-                                                                <td id="status_name"><%= person.status %></td>
+                                                                <td>
+                                                                    <select id="edit_status">
+                                                                    	<option value="Undergradudate">Undergraduate</option>
+                                                                    	<option value="Master">MSc</option>
+                                                                    	<option value="MScAC">MScAC</option>
+                                                                    	<option value="Diploma">Diploma</option>
+                                                                    	<option value="Phd">Phd</option>
+                                                                    </select>
+                                                                </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Role:</td>
-                                                                <td id="role_name"><%= person.role %></td>
+                                                                <td>Role</td>
+                                                                <td>
+                                                                    <input id="edit_role" value=<%= person.role %>></input>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <tr>
                                                                     <td>Gender</td>
-                                                                    <td id="gender_name"><%= person.gender %></td>
+                                                                    <td>
+                                                                        <select id="edit_gender">
+                                                                        	<option value="male">Male</option>
+                                                                        	<option value="female">Female</option>
+                                                                        </select>
+                                                                    </td>
                                                                 </tr>
+                                                                <tr>
                                                                     <td>Email</td>
                                                                     <td><a href="#" id="email_name"><%= person.email %></a></td>
                                                                 </tr>
                                                                 <td>Country</td>
-                                                                <td id="country_name"><%= person.country %>
+                                                                <td>
+                                                                    <input type="text" id="edit_country" value=<%= person.country %>></input>
                                                                 </td>
                                                             </tr>
                                                             
@@ -158,13 +180,13 @@
                                         <!-- the footer -->
                                         <div class="panel-footer" style="height:50px">
                                             <span class="pull-right">
-                                                <a id=<%= person.username %> data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning edit_btn"><i class="glyphicon glyphicon-edit"></i></a>
+                                                <a id="ok_btn" data-original-title="Save this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-ok"></i></a>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                                                   
+                        </div>
                     </div>
                 </div>
             </div>

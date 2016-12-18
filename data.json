@@ -1,0 +1,157 @@
+
+[
+  {
+    "username": "SunMengMeng",
+    "pwd": "12345678",
+    "givenname": "Meng",
+    "lastname": "Sun",
+    "gender": "Female",
+    "email": "artist@hotmail.com",
+    "country": "China",
+    "status": "Undergrad",
+    "role": "Fashion Designer",
+    "picture":"./img/Meng.jpg",
+    "products": [
+      {
+        "_id": "1234567",
+
+        "name": "Fashion",
+        "description": "work that combines fashion and Chinese culture",
+        "releaseTime": "2016-11-29T08:43:41.733Z",
+        "picture":"./img/fashion.jpg",
+        "reviews": [
+          {
+            "_id": "123123124",
+            "reviewID": "11212323",
+            "rating": 4,
+            "author": "Yu Ang",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "Nice work!"
+          }
+        ]
+      },
+      {
+        "_id": "123432",
+        "name": "passion",
+        "description": "worst work I have ever created in my life. A portrayal of me and my characteristics",
+        "releaseTime": "2016-11-29T08:43:41.733Z",
+        "picture":"./img/passion.jpg",
+        "reviews": [
+          {
+
+            "_id": "113212412",
+            "reviewID": "12124123",
+            "rating": 1,
+            "author": "Liya",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "decent work, the aesthetic aspect is really worth mentioning  ...."
+          },
+          {
+
+            "_id": "123123125",
+            "reviewID": "1294123",
+            "rating": 1,
+            "author": "Lisa",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "really good work...."
+          }
+        ]
+      },
+      {
+        "_id":"12312125124512",
+        "name": "river",
+        "description": "good work",
+        "releaseTime": "2016-11-29T08:43:41.733Z",
+        "picture":"./img/culturegirl.jpg",
+        "reviews": [
+          {
+
+            "_id": "3",
+            "reviewID": "151242312",
+            "rating": 5,
+            "author": "Yu Ang",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "master piece work!"
+          }
+        ]
+      }
+    ]
+  },
+  
+  
+  {
+    "_id":"124124124",
+    "username": "DongGe",
+    "pwd": "13571357",
+    "givenname": "Alan",
+    "lastname": "Li",
+    "gender": "male",
+    "email": "alan234@hotmail.com",
+    "country": "China",
+    "status": "PhD",
+    "role": "Fashion Designer",
+    "picture":"./img/Alan.jpg",
+    "products": [
+      {
+        "_id":"52123124123",
+        "name": "民族风情",
+        "description": "My final work from first semester",
+        "releaseTime": "2016-11-29T08:43:41.733Z",
+        "picture":"./img/culture.jpg",
+        "reviews": [
+          {
+
+            "_id": "15123123",
+            "reviewID": "123124124",
+            "rating": 4,
+            "author": "Yu Ang",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "Nice work!"
+          }
+        ]
+      },
+      {
+        "_id": "1523123",
+        "name": "tiger",
+        "description": "work that shows demonstrates the courage of tiger and its power",
+        "releaseTime": "2016-11-29T08:43:41.733Z",
+        "picture":"./img/tiger.jpg",
+        "reviews": [
+          {
+             "_id": "1541123",
+            "reviewID": "1241253",
+            "rating": 1,
+            "author": "Liya",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "awesome work! I am speechless"
+          },
+          {
+            "_id": "23423434",
+            "reviewID": "43463534",
+            "rating": 1,
+            "author": "Lisa",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "really smooth work...."
+          }
+        ]
+      },
+      {
+        "_id": "12316512412",
+        "name": "Style",
+        "description": "good work",
+        "releaseTime": "2016-11-29T08:43:41.733Z",
+        "picture":"./img/nation.jpg",
+        "reviews": [
+          {
+            "_id": "23423434",
+            "reviewID": "509309018",
+            "rating": 5,
+            "author": "Yu Ang",
+            "releaseTime": "2016-11-29T08:43:41.733Z",
+            "text": "master piece work!"
+          }
+        ]
+      }
+    ]
+  }
+]

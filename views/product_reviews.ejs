@@ -4,12 +4,12 @@
         <title>DesignForm</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- Jquery and Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+
         <!-- addition css to make the icon -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Website CSS style -->
@@ -38,7 +38,7 @@
                 <div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
-                            <% var home_url= "user_home?username=" + person.username %>
+                        <% var home_url= "user_home?username=" + person.username %>
                             <li><a class="home_ref" href=<%=home_url%> id="user_ref"><%=person.username%></a></li>
                             <li><a href="main">Log out</a></li>
                         </ul>
@@ -52,9 +52,9 @@
         <div class="container">
             <div id="sidebar">
                 <ul>
-                <% var user_search_url = "user_search?user=" + person.username %>
-                <% var explore_url = "explore?username=" + person.username %>
-                    <li><a href="/main">Home</a></li>
+                    <% var user_search_url = "user_search?user=" + person.username %>
+                    <% var explore_url = "explore?username=" + person.username %>
+                    <li><a href="main">Home</a></li>
                     <li><a href=<%= explore_url%>>Explore</a></li>
                     <li><a href=<%= user_search_url %>>Users</a></li>
                     <li><a href="/">Sign Out</a></li>
@@ -92,16 +92,7 @@
                         <div class="container-fluid">
                          
                             <!-- the user's menu-->
-                            <% var gallery_url= "gallery?username=" + person.username %>
-                            <% var profile_url= "profile?username=" + person.username %>
-                            <% var add_url= "addproduct?username=" + person.username %>
-                            <% console.log(gallery_url)%>
-                            <div class="collapse navbar-collapse">
-                                <a id="go_home_btn" href=<%=home_url%> style="font-size: 40px; color:lightblue">Home</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp
-                                <a href=<%=profile_url%> style="font-size: 40px; color:lightblue" id="get_profile_btn">Profile</a>&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp
-                                <a href=<%=gallery_url%> style="font-size: 40px; color:lightblue">Gallery</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <a id="addproduct_btn" style="font-size: 40px; color:lightblue" href=<%=add_url%>>Add product</a> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
-                            </div>
+
                         </div>
                     </nav>
 
@@ -114,57 +105,90 @@
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
                                     <div class="panel panel-info">
                                         <div class="panel-heading">
-                                        <h3 class="panel-title" id="user_name"><%= person.givenname %>&nbsp<%= person.lastname %></h3>
                                         </div>
                                         <div class="panel-body">
                                             <div class="row">
-                                             <% if(!person.picture){%>
-                                                <div class="col-md-3 col-lg-3 " align="center"> <img  src="./img/face.jpg" class="img-circle img-responsive"> </div>
-                                            <% }%>
-                                                 <div class="col-md-3 col-lg-3 " align="center"> <img  src="<%= person.picture %>" class="img-circle img-responsive"> </div>
+                                                 <div class="col-md-3 col-lg-3 " align="center"> <img  src="<%= product.picture %>" class="img-circle img-responsive"> </div>
                                                 <div class=" col-md-9 col-lg-9 "> 
                                                     <table class="table table-user-information">
                                                         <tbody>
                                                           
                                                             <tr>
+                                                                <h2 style="text-align: center">Product Info</h2>
+                                                                <td>Name:</td>
 
-                                                                <td>Status:</td>
-
-                                                                <td id="status_name"><%= person.status %></td>
+                                                                <td id="prod_name"><%= product.name %></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Role:</td>
-                                                                <td id="role_name"><%= person.role %></td>
+                                                                <td>Description:</td>
+                                                                <td id="prod_description"><%= product.description %></td>
                                                             </tr>
                                                             <tr>
                                                                 <tr>
-                                                                    <td>Gender</td>
-                                                                    <td id="gender_name"><%= person.gender %></td>
+                                                                    <td>Release Time:</td>
+                                                                    <td id="prod_rtime"><%= product.releaseTime %></td>
                                                                 </tr>
-                                                                    <td>Email</td>
-                                                                    <td><a href="#" id="email_name"><%= person.email %></a></td>
+                                                                    <td>On Sale Status:</td>
+                                                                    <td id="prod_st"><%= product.onSaleStatus %></td>
                                                                 </tr>
-                                                                <td>Country</td>
-                                                                <td id="country_name"><%= person.country %>
-                                                                </td>
                                                             </tr>
                                                             
                                                         </tbody>
                                                     </table>
+                                                    <h2 style="text-align: center">Reviews</h2>
+
+                                                    <!-- the gallery part -->
+                                                    <% product.reviews.forEach(function(review){%>
+                                                        <br /><br />
+                                                        <div align="center">
+                                                            <table class="table table-user-information">
+                                                                <tbody>
+                                                                  
+                                                                    <tr>
+
+                                                                        <td>Author:</td>
+
+                                                                        <td id="review_author"><%= review.author %></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>ReviewID:</td>
+                                                                        <td id="review_id"><%= review.reviewID %></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <tr>
+                                                                            <td>Release Time:</td>
+                                                                            <td id="review_rtime"><%= review.releaseTime %></td>
+                                                                        </tr>
+                                                                            <td>Text:</td>
+                                                                            <td id="review_text"><%= review.text %></td>
+                                                                        </tr>
+                                                                    </tr>
+                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                            <br /><br />
+                                                        </div>
+
+                                                    <%})%>  
+
+
                                                 </div>    
                                             </div>
+										<% var add_url = "add_review"%>
+                                        <a id="addproduct_btn" style="font-size: 40px; color:lightblue" href=<%=add_url%>>Add review</a> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
                                         </div>
                                         
                                         <!-- the footer -->
                                         <div class="panel-footer" style="height:50px">
-                                            <span class="pull-right">
-                                                <a id=<%= person.username %> data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning edit_btn"><i class="glyphicon glyphicon-edit"></i></a>
-                                            </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                                                   
+                        </div>
+                    
+
+                    
+                
                     </div>
                 </div>
             </div>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+        <!-- Website CSS style -->
+
+        <link rel="stylesheet" type="text/css" href="../css/add_product_style.css">
+
+
+        <!-- Website Font style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+
+        <title>Add Your Product</title>
+
+    </head>
+
+
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/">DesignForm</a>
+              </div>
+          </div>
+      </nav>
+
+    <div class="container">
+      <div class="row main">
+        <div class="panel-heading">
+                 <div class="panel-title text-center">
+
+                    <h1 class="title">Add Your Product</h1>
+
+                    <hr />
+                  </div>
+              </div>
+        <% var add_url= "/add_product?username=" + person.username %>
+        <div class="main-login main-center">
+          <form id="addProdForm" class="form-horizontal" method="post" action=<%=add_url%>>
+
+            <div class="form-group">
+              <label for="prodname" class="cols-sm-2 control-label">Product Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-paint-brush" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="prodname" id="prod_name"  placeholder="Enter Product Name"/>
+                </div>
+              </div>
+            </div>
+
+
+
+  <!--         <div class="form-group">
+              <label for="rtime" class="cols-sm-2 control-label">Release Time</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="rtime" id="rtime"  placeholder="Enter Release Time"/>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="form-group">
+              <label for="salest" class="cols-sm-2 control-label">On Sale Status</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="salest" id="sale_st"  placeholder="Enter Sale Status"/>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="pic" class="cols-sm-2 control-label">Upload Picture</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="pic" id="pic_url"  placeholder="Enter Picture Url"/>
+
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <label for="proddes" class="cols-sm-2 control-label">Description</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-paperclip" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="proddes" id="prod_des"  placeholder="Enter Product Description"/>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group ">
+              <!-- <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button> -->
+
+              <input class="btn btn-primary btn-lg btn-block login-button" type="submit" value="Add Product">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

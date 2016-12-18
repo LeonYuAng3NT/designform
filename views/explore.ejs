@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DesignForm</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Jquery and Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+
+        <!-- Website JS -->
+        <script src="../script/explore.js"></script>
+        
+        <!-- Website CSS style -->
+        <link rel="stylesheet" type="text/css" href="../css/add_product_style.css">
+        <style>
+            body {
+                position: relative; 
+            }
+        </style>
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- the left site name and logo -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="main">DesignForm</a>
+                </div>
+
+                <!-- the right bars -->
+                <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <% var home_url= "user_home?username=" + person.username %>
+                            <li><a class="home_ref" href=<%=home_url%> id="user_ref"><%=person.username%></a></li>
+                            <li><a href="/">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+<!-- the XXX part -->
+
+<!-- the display part -->
+<div id="section2" class="container-fluid">
+    <div>
+        <br /> <br / >
+        <h1 style="text-align: center"> All works from Artists</h1>
+        <% products.forEach(function(product){%>
+        <div class = "col-md-5 col-sm-6">
+            <div class="thumbnail">
+
+                <div class="caption">
+                    <img src="<%= product.picture%>" class="img-circle" alt="No Image Provided" width="200" height="136">
+                    <button id=<%= product.name%> class="see_btn">SEE ME</button>
+
+                    <h2>Name: <%= product.name %></h2>
+                    <text>Description: <%=  product.description%></text>
+                </div>
+
+            </div>
+        </div>
+        <% })%>
+    </div>
+
+</div>
+
+
+</body>
+</html>

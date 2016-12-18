@@ -1,5 +1,4 @@
 body, html{
-    background-image:url(./background5-min.jpg);
     height: 100%;
  	background-repeat: no-repeat;
  	background-color: white;

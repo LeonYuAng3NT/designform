@@ -1,6 +1,6 @@
-function  edit_profile() {
+function  edit_profile() { 
     $.ajax({
-        url: "/edit_artists",
+        url: "/edit_artist",
         type: "GET",
         data: {
           username : this.id
@@ -12,7 +12,23 @@ function  edit_profile() {
         }
       });
     window.location.href = "/edit_artist?username=" + this.id;
-add}
+}
+
+function del_profile() {
+    console.log("THE DEL BUTTON WORKS");
+    console.log(this.id);
+    
+    $.ajax({
+        url: "/artists?username=" + this.id,
+        type: "DELETE",
+        dataType: "json",
+        contentType:"application/json; charset=utf-8",
+        success: function(response) {
+          window.alert('evaluate response and show alert');
+        }
+      });
+      window.location.reload();
+}
 
 function get_search_text() {
     var search_text = document.getElementById("search_text").value;
@@ -25,7 +41,7 @@ function get_search_text() {
         url: "/artists",
         type: "GET",
         data: {
-          username : search_text
+          id : search_text
         },
         dataType: "json",
         contentType:"application/json; charset=utf-8",
@@ -33,7 +49,7 @@ function get_search_text() {
           window.alert('evaluate response and show alert');
         }
       });
-      window.location.href = "/user_search?username=" + search_text +"&user=" + document.getElementById("user_ref").innerText;
+      window.location.href = "/artists?username=" + search_text;
     }
 
     if (search_option == "country") {
@@ -51,7 +67,7 @@ function get_search_text() {
         }
       });
       //window.location.href = "/artists?id=" + search_text;
-      window.location.href = "/user_search?country=" + search_text +"&user=" + document.getElementById("user_ref").innerText
+      window.location.href = "/artists?country=" + search_text;
     }
 
     if (search_option == "fname") {
@@ -66,9 +82,9 @@ function get_search_text() {
         success: function(response) {
           window.alert('evaluate response and show alert');
         }
-
+        
       });
-      window.location.href = "/user_search?fname=" + search_text +"&user=" + document.getElementById("user_ref").innerText
+      window.location.href = "/artists?fname=" + search_text;
     }
 }
 
@@ -84,9 +100,9 @@ function show_gallery(){
         success: function(response) {
           window.alert('evaluate response and show alert');
         }
-
+        
       });
-
+      
 }
 
 $(document).ready(function() {
@@ -96,16 +112,15 @@ $(document).ready(function() {
 
     // set the behaviour for all edit btn
     $(".edit_btn").on("click", edit_profile);
-
-    // set the behaviour for all gallery btn
+    
     $("#gallery_btn").on("click", show_gallery);
 
-    // set for del product btn
-    //$('.del_pic_btn').on('click', del_product);
+    // set the behaviour for all delete btn
+    $(".del_btn").on("click", del_profile);
 
     $("[data-toggle]").click(function() {
         var toggle_el = $(this).data("toggle");
         $(toggle_el).toggleClass("open-sidebar");
     });
-
+     
 });

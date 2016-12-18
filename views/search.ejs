@@ -4,19 +4,19 @@
         <title>DesignForm</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- Jquery and Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+
         <!-- addition css to make the icon -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Website CSS style -->
         <link rel="stylesheet" type="text/css" href="../css/user_style.css">
 
         <!-- Website js-->
-        <script src="../script/user.js"></script>
+        <script src="../script/admin.js"></script>
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -38,9 +38,9 @@
                 <div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
-                            <% var home_url= "user_home?username=" + person.username %>
-                            <li><a class="home_ref" href=<%=home_url%> id="user_ref"><%=person.username%></a></li>
-                            <li><a href="main">Log out</a></li>
+                            <li><a href="admin_home" id="username_field">Admin</a></li>
+                            </li>
+                            <li><a href="main.html">Log out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,11 +52,9 @@
         <div class="container">
             <div id="sidebar">
                 <ul>
-                <% var user_search_url = "user_search?user=" + person.username %>
-                <% var explore_url = "explore?username=" + person.username %>
                     <li><a href="/main">Home</a></li>
-                    <li><a href=<%= explore_url%>>Explore</a></li>
-                    <li><a href=<%= user_search_url %>>Users</a></li>
+                    <li><a href="/">Explore</a></li>
+                    <li><a href="/artists">Users</a></li>
                     <li><a href="/">Sign Out</a></li>
                     <br />
                     <select id="search_option">
@@ -92,23 +90,18 @@
                         <div class="container-fluid">
                          
                             <!-- the user's menu-->
-                            <% var gallery_url= "gallery?username=" + person.username %>
-                            <% var profile_url= "profile?username=" + person.username %>
-                            <% var add_url= "addproduct?username=" + person.username %>
-                            <% console.log(gallery_url)%>
                             <div class="collapse navbar-collapse">
-                                <a id="go_home_btn" href=<%=home_url%> style="font-size: 40px; color:lightblue">Home</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp
-                                <a href=<%=profile_url%> style="font-size: 40px; color:lightblue" id="get_profile_btn">Profile</a>&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp
-                                <a href=<%=gallery_url%> style="font-size: 40px; color:lightblue">Gallery</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <a id="addproduct_btn" style="font-size: 40px; color:lightblue" href=<%=add_url%>>Add product</a> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
+                                <a id="go_home_btn" href="/main" style="font-size: 40px; color:lightblue">Home</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <a href="#" style="font-size: 40px; color:lightblue" id="get_profile_btn">Profile</a> &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp
                             </div>
                         </div>
                     </nav>
 
                     <!-- the part that may change with the user's choice in this case is the profile-->
                     <div id="changing_part">
-
+                        
                         <!-- The profile content-->
+                        <% persons.forEach(function(person){%>
                         <div class="container">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -159,12 +152,15 @@
                                         <div class="panel-footer" style="height:50px">
                                             <span class="pull-right">
                                                 <a id=<%= person.username %> data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning edit_btn"><i class="glyphicon glyphicon-edit"></i></a>
+                                                &nbsp &nbsp
+                                                <a id=<%= person.username %> data-original-title="Delete this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning del_btn"><i class="glyphicon glyphicon-remove"></i></a>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                                                   
+                        </div>
+                        <%})%>
                     </div>
                 </div>
             </div>
