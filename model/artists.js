@@ -78,7 +78,7 @@ Artist.methods.validPassword = function(password) {
     return bCrypt.compareSync(password, this.password);
 };
 
-var dbURI = 'mongodb://heroku_9nc1sdzs:leonzhang1996@ds119738.mlab.com:19738/heroku_9nc1sdzs';
+var dbURI = 'mongodb://localhost/designform';
 
 
 mongoose.connect(dbURI);
