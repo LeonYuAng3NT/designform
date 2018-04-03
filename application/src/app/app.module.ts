@@ -23,6 +23,7 @@ import { DevModuleModule } from './+dev-module';
 import '../styles/styles.scss';
 import '../styles/headings.css';
 import { ProfileComponent } from './profile/profile.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -47,7 +48,8 @@ interface StoreType {
     HomeComponent,
     NoContentComponent,
     XLargeDirective,
-    ProfileComponent
+    ProfileComponent,
+    GalleryComponent
   ],
   /**
    * Import Angular's modules.
